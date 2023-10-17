@@ -172,3 +172,17 @@
 
   /* Main content */
 
+  .main {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  .section {
+    
+  }
+
+  .section__title {
+    display: inline-block;
+  }
+
