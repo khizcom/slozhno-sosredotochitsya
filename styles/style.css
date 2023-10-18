@@ -175,14 +175,25 @@
   .main {
     display: flex;
     flex-direction: column;
+    margin: 60px 0 80px;
+    padding: 0 20px;
+    gap: 80px;
+
   }
 
+.section {
 
-  .section {
-    
-  }
+}
 
   .section__title {
-    display: inline-block;
+    color: var(--accent-color);
+  }
+
+  .section__article-title {
+    color: var(--background-color);
+  }
+
+  .section__article-text {
+    color: var(--main-text-color);
   }
 
