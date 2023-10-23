@@ -188,12 +188,18 @@
 .section:first-of-type,
 .section:nth-of-type(3) {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
+@media (375px < width < 768px) {
+  .section:first-of-type .section__title,
+  .section:nth-of-type(3) .section__title {
+  width: 100%;
+ }
+} 
 
-
-  .section__title {
+.section__title {
     color: var(--accent-color);
     font-size: 18px;
     font-weight: 700;
@@ -215,25 +221,23 @@
     justify-content: space-between;
   }
 
-@media (width < 1024px) {
-  .section__article-list {
-    flex-direction: column;
-  }
+.section__article-list-title {
+  color: var(--background-color);
+  font-size: 18px;
+  font-weight: 700;
 }
+
 
 
 
   @media (375px < width < 1024px) {
     .section__article-list {
+      width: 100%;
       gap: 20px;
     }  
   }
 
-.section__article-list-title {
-  color: var(--background-color);
-  font-size: 18px;
-  font-weight: 700;
-  }
+
 
 .section:nth-of-type(2) .section__title {
   width: 30%;
@@ -267,6 +271,22 @@
 .section:nth-of-type(3) .section__title {
   flex: 0 0 auto;
   width: 33%;
+
+}
+
+@media (768px < width < 1024px) {
+  .section:first-of-type .section__title,
+  .section:nth-of-type(3) .section__title {
+    width: 32%;
+  }
+}
+
+@media (375px < width < 768px) {
+  .section:first-of-type .section__title,
+  .section:nth-of-type(3) .section__title {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }
 
 .section:first-of-type .section__article-list,
@@ -275,3 +295,79 @@
   width: 66%;
   gap: 20px;
 }
+
+@media (768px < width < 1024px) {
+  .section:first-of-type .section__article-list,
+  .section:nth-of-type(3) .section__article-list {
+    width: 65%;
+  }
+}
+
+@media (375px < width < 768px) {
+  .section:first-of-type .section__article-list,
+  .section:nth-of-type(3) .section__article-list {
+    width: 100%;
+  }
+}
+
+
+.section:last-of-type {
+  display: grid;
+}
+
+@media (768px< width) {
+  .section:last-of-type {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px 19px;
+  }
+}
+
+.section:last-of-type .section__article-title {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.section:last-of-type .section__image:first-of-type {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.section:last-of-type .section__image:nth-of-type(2) {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 4;
+}
+
+.section:last-of-type .section__image:nth-of-type(3) {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 3;
+  grid-row-end: 5;
+}
+
+.section:last-of-type .section__image:nth-of-type(4) {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+
+.section:last-of-type .section__image:nth-of-type(5) {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 4;
+  grid-row-end: 5;
+}
+
+.section__image {
+  height: 100%;
+  width: 100%;
+  object-position: center;
+  object-fit: cover;
+}
+
