@@ -315,10 +315,17 @@
   display: grid;
 }
 
-@media (768px< width) {
+@media (768px < width) {
   .section:last-of-type {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px 19px;
+  }
+}
+@media (width < 768px) {
+  .section:last-of-type {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
 }
 
@@ -369,5 +376,22 @@
   width: 100%;
   object-position: center;
   object-fit: cover;
+}
+
+
+
+/*Footer*/
+
+.footer {
+  padding: 319px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.footer__title {
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  font-weight: 700;
+  color: var(--title-color);
+  text-shadow: 2px 2px 0px var(--accent-color);
 }
 
