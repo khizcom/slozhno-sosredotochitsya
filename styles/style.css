@@ -15,6 +15,12 @@
   padding: 0 20px;
 }
 
+@media (768px > width >= 375px) {
+  .header {
+    padding: 0 10px;
+  }
+}
+
 .decorated-zone::before {
   content: "";
   position: absolute;
@@ -92,9 +98,15 @@
   }
 }
 
-@media (width < 768px) {
+@media (768px < width < 1024px) {
   .header__theme-menu {
-    padding-top: 76px;
+    padding-top: 190px;
+  }
+}
+
+@media (375px < width < 768px) {
+  .header__theme-menu {
+    padding-top: 75px;
   }
 }
 
@@ -111,9 +123,15 @@
   }
 }
 
+@media (375px < width < 768px) {
+  .header__theme-menu-list {
+    gap: 11px;
+  }
+}
+
 .header__theme-menu-button {
   text-transform: lowercase;
-  padding: 0 13px;
+  padding: 2.5px 13px;
   font-size: 18px;
   font-weight: 400;
   color: var(--theme-selection-color);
@@ -142,30 +160,39 @@
 
 .header__title-container {
   display: flex;
-  padding: 274px 0 134px;
+  padding: 238px 0 135px;
   flex-direction: column;
-  gap: 114px;
+  gap: 75px;
 }
 
 @media (768px < width < 1024px) {
   .header__title-container {
-    padding: 174px 0 183px;
-    gap: 162px;
+    padding: 151px 0 183px;
+    gap: 130px;
   }
 }
 
-@media (width < 768px) {
+@media (375px < width < 768px){
   .header__title-container {
-    padding: 66px 0 66px;
-    gap: 55px;
+    padding: 74px 0 66px;
+    gap: 54px;
   }
 }
 
 .header__title {
+  margin-left: -20px;
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   font-weight: 700;
   color: var(--title-color);
   text-shadow: 4px 4px 0px var(--accent-color);
+}
+
+@media (375px < width < 768px) {
+  .header__title {
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+    margin-left: 0;
+    line-height: 82.5%;
+  }
 }
 
 .header__paragraph {
@@ -186,9 +213,17 @@
 .main {
   display: flex;
   flex-direction: column;
-  margin: 60px 0 80px;
+  margin: 63px 0 60px;
   padding: 0 20px;
   gap: 80px;
+}
+
+@media (375px < width < 768px) {
+  .main {
+    padding: 0 10px;
+    margin: 41px 0;
+    gap: 50px;
+  }
 }
 
 .section {
@@ -261,6 +296,12 @@
 
 .section:nth-of-type(2) .section__title {
   width: 30%;
+}
+
+@media (375px < width < 768px) {
+  .section:nth-of-type(2) .section__title {
+    width: 100%;
+  }
 }
 
 .section__article-item {
@@ -399,9 +440,22 @@
 /*Footer*/
 
 .footer {
-  padding: 319px 20px;
+  padding: 282px 20px;
   text-align: center;
   position: relative;
+}
+
+@media (768px < width < 1024px) {
+  .footer {
+    padding: 430px 20px;
+  }
+}
+
+@media (375px < width < 768px) {
+  .footer {
+    padding: 257px 10px;
+  }
+
 }
 
 .footer__title {
