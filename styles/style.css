@@ -4,8 +4,8 @@
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   background: var(--background-image);
   background-color: var(--background-color);
-  background-size: auto 768px;
-  background-position: top center;
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
