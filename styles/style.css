@@ -15,8 +15,7 @@
   grid-template-rows: 1fr min-content 1fr;
   height: 100vh;
   min-height: 668px;
-  position: relative; 
-  
+  position: relative;
 }
 
 .decorated-zone::before {
@@ -66,12 +65,6 @@
   padding-top: 20px;
 }
 
-@media (768px <= width < 1024px) {
-  .header__theme-menu {
-    padding-top: 190px;
-  }
-}
-
 .header__theme-menu-list {
   display: flex;
   justify-content: center;
@@ -84,7 +77,6 @@
     align-items: flex-end;
   }
 }
-
 
 .header__theme-menu-button {
   text-transform: lowercase;
@@ -115,59 +107,81 @@
   border: 1px solid;
 }
 
-.header__title-container {
-  display: flex;
-  flex-direction: column;
-  align-self: center;
-  padding-block-end: 60px;
-}
-
-@media (768px < width < 1024px) {
-  .header__title-container {
-    padding: 151px 0 183px;
-    gap: 130px;
-  }
-}
-
-
 .header__title {
-  margin-left: -20px;
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   font-weight: 700;
   color: var(--title-color);
   text-shadow: 4px 4px 0px var(--accent-color);
 }
 
+.header__title-container {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  padding: 0 20px 60px 20px;
+  padding-block-end: 60px;
+  padding-inline-end: 20px;
+}
 
 .header__paragraph {
+  width: 36%;
   color: var(--article-title-color);
   align-self: self-end;
   font-weight: 700;
   width: 50%;
 }
 
-
 /* Main content */
 
 .main {
   display: flex;
   flex-direction: column;
-  margin: 63px 0 60px;
+  margin: 60px 0 60px;
   padding: 0 20px;
-  gap: 80px;
+  gap: 60px;
 }
 
-
-.section {
-  line-height: 130%;
-}
-
-.section__first_block, .section__third-block {
+.section__first-block,
+.section__third-block {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
 }
 
+.section__first-block .section__title,
+.section__third-block .section__title {
+  width: 33%;
+  flex: 0 0 auto;
+}
+
+.section__first-block .section__article-list,
+.section__third-block .section__article-list {
+  width: 66%;
+  flex: 0 0 auto;
+}
+
+.section {
+  line-height: 130%;
+}
+
+.section__first_block .section__article-list {
+  flex-direction: column;
+  width: 70%;
+  gap: 30px;
+}
+
+.section__second-block .section__title {
+  width: 30%;
+}
+
+.section__second-block .section__article-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.section__second-block .section__article-item {
+  width: 32%;
+}
 
 .section__title {
   color: var(--accent-color);
@@ -200,49 +214,14 @@
   font-weight: 400;
 }
 
-.section__article-list {
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 20px;
-
-}
-
 .section__article-list-title {
   color: var(--background-color);
   font-size: 18px;
   font-weight: 700;
 }
 
-@media (375px < width < 1024px) {
-  .section__article-list {
-    width: 100%;
-    gap: 20px;
-  }
-}
-
-
-
-@media (375px < width < 768px) {
-  .section:nth-of-type(2) .section__title {
-    width: 100%;
-  }
-}
-
-.section__second-block .section__article-item {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 33%;
-}
-
-
-@media (375px< width <1024px) {
-  .section:nth-of-type(2) .section__article-item {
-    width: 100%;
-  }
-}
-
 .section__article-text {
+  padding: 10px 0 20px;
   color: var(--main-text-color);
 }
 
@@ -250,42 +229,8 @@
   background: var(--accent-color);
 }
 
-
-@media (768px < width <= 1024px) {
-  .section__first_block .section__title,
-  .section__third-block .section__title {
-    width: 32%;
-  }
-}
-
-@media (375px < width < 768px) {
-  .section:first-of-type .section__title,
-  .section:nth-of-type(3) .section__title {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-}
-
-
-.section:first-of-type .section__article-list,
-.section:nth-of-type(3) .section__article-list {
-  flex-direction: column;
-  width: 66%;
-  gap: 20px;
-}
-
-@media (768px < width < 1024px) {
-  .section:first-of-type .section__article-list,
-  .section:nth-of-type(3) .section__article-list {
-    width: 65%;
-  }
-}
-
-@media (375px <= width < 768px) {
-  .section:first-of-type .section__article-list,
-  .section:nth-of-type(3) .section__article-list {
-    width: 100%;
-  }
+.section__third-block .section__article-list-title {
+  margin-bottom: 20px;
 }
 
 .section_fourth_block {
@@ -293,7 +238,6 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 20px 19px;
 }
-
 
 .section_fourth_block .section__article-title {
   grid-column-start: 1;
@@ -358,7 +302,6 @@
   }
 }
 
-
 .footer__title {
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   font-weight: 700;
@@ -366,9 +309,11 @@
   text-shadow: 2px 2px 0px var(--accent-color);
 }
 
-
-
 @media (375px <= width < 768px) {
+  .header {
+    padding: 0 10px;
+  }
+
   .decorated-zone::before {
     left: 10px;
     bottom: 10px;
@@ -386,21 +331,21 @@
 
   .header__theme-menu {
     justify-content: end;
-    padding-block-end: 10px;
-    padding-inline-end: 10px;    
+    padding-block-start: 10px;
   }
-  
+
   .header__theme-menu-list {
+    flex-direction: column;
+    align-items: flex-end;
     gap: 11px;
   }
 
-  .header__title-container {    
-     padding: 0 10px 10px 10px;
+  .header__title-container {
+    padding: 0 0 10px 0;
   }
 
   .header__title {
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-    margin-inline-start: 10px;
     line-height: 82.5%;
   }
 
@@ -411,11 +356,46 @@
   .main {
     padding: 0 10px;
     margin: 38px 0;
-    gap: 50px;
+    gap: 32px;
+    flex-direction: column;
   }
 
-  .section__first_block, .section__third-block {
-    flex-wrap: wrap;
+  .section__first_block,
+  .section__second-block,
+  .section__third-block {
+    flex-direction: column;
+  }
+
+  .section__first-block,
+  .section__third-block {
+    flex-direction: column;
+  }
+
+  .section__first-block .section__title,
+  .section__second-block .section__title,
+  .section__third-block .section__title {
+    width: 80%;
+  }
+
+  .section__third-block .section__title {
+    width: 100%;
+  }
+
+  .section__first-block .section__article-list,
+  .section__third-block .section__article-list {
+    width: 100%;
+  }
+
+  .section__second-block {
+    display: flex;
+  }
+
+  .section__second-block .section__article-list {
+    flex-direction: column;
+  }
+
+  .section__second-block .section__article-item {
+    width: 100%;
   }
 
   .section__title {
