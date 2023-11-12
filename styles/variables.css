@@ -3,17 +3,42 @@
   и их переопределение под различные устройства
 */
 
-:root {
-  --font-family: "IBM Plex mono";
-  --background-color: #000028;
-  --main-text-color: #f1b2ce;
-  --title-color: #db00ff;
-  --article-title-color: var(--background-color);
-  --accent-color: #ff0070;
-  --rec-color: var(--accent-color);
-  --theme-selection-color: var(--accent-color);
-  --hover-color: 1px solid rgba(255, 0, 112, 0.4);
-  --link-shadow: var(--accent-color);
+@media (prefers-color-scheme: dark) {
+  :root {
+    --font-family: "IBM Plex mono";
+    --background-color: #000028;
+    --main-text-color: #f1b2ce;
+    --title-color: #db00ff;
+    --title-shadow: #ff0070;
+    --section-title-color: var(--title-shadow);
+    --title-decor: #ff0070;
+    --article-title-color: var(--background-color);
+    --accent-color: #ff0070;
+    --rec-color: var(--accent-color);
+    --theme-selection-color: var(--accent-color);
+    --hover-color: 1px solid rgba(255, 0, 112, 0.4);
+    --link-shadow: var(--title-shadow);
+    --background-image: url(../images/cover-image-dark.png);
+    --corners-color: #ff0070;
+  }
+}
 
-  --background-image: url(../images/cover-image-dark.png);
+@media (prefers-color-scheme: light) {
+  :root {
+    --font-family: "IBM Plex mono";
+    --background-color: #fff1f7;
+    --corners-color: #353430;
+    --rec-color: var(--background-color);
+    --main-text-color: #353430;
+    --title-color: #ffc2e6;
+    --title-shadow: #ff0070;
+    --title-decor: #ff8dcb;
+    --section-title-color: var(--main-text-color);
+    --article-title-color: var(--main-text-color);
+    --accent-color: #ff0070;
+    --theme-selection-color: var(--main-text-color);
+    --hover-color: 1px solid rgba(50, 49, 45, 0.4);
+    --link-shadow: var(--title-color);
+    --background-image: url(../images/cover-image-light.png);
+  }
 }

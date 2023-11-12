@@ -11,6 +11,7 @@
 }
 
 .header {
+  padding: 0 20px;
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
   height: 100vh;
@@ -23,8 +24,8 @@
   position: absolute;
   height: 25px;
   width: 25px;
-  border-left: 1px solid var(--accent-color);
-  border-bottom: 1px solid var(--accent-color);
+  border-left: 1px solid var(--corners-color);
+  border-bottom: 1px solid var(--corners-color);
   left: 20px;
   bottom: 20px;
 }
@@ -34,8 +35,8 @@
   position: absolute;
   height: 25px;
   width: 25px;
-  border-right: 1px solid var(--accent-color);
-  border-top: 1px solid var(--accent-color);
+  border-right: 1px solid var(--corners-color);
+  border-top: 1px solid var(--corners-color);
   right: 20px;
   top: 20px;
 }
@@ -52,11 +53,13 @@
   content: "";
   width: 9px;
   height: 9px;
-  background-color: var(--accent-color);
+  background-color: var(--rec-color);
   position: absolute;
   border-radius: 50%;
   margin: 8px 0 0 10px;
-  box-shadow: 0 0 4px 2px var(--accent-color);
+  box-shadow: 0 0 4px 2px var(--rec-color);
+  top: 0;
+  left: 33px;
 }
 
 .header__theme-menu {
@@ -83,7 +86,7 @@
   padding: 2.5px 13px;
   font-size: 18px;
   font-weight: 400;
-  color: var(--theme-selection-color);
+  color: var(--corners-color);
   background: none;
   border: none;
   line-height: 18px;
@@ -95,32 +98,33 @@
 }
 
 .header__theme-menu-button:focus {
+  outline: none;
   border: none;
-  border-bottom: 1px solid var(--theme-selection-color);
+  border-bottom: 1px solid var(--corners-color);
 }
 
 .header__theme-menu-button:focus-visible {
-  border-bottom: 1px solid var(--theme-selection-color);
+  border-bottom: 1px solid var(--corners-color);
 }
 
 .header__theme-menu-button_active {
   border: 1px solid;
+  pointer-events: none;
 }
 
 .header__title {
+  margin-inline-start: -20px;
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   font-weight: 700;
   color: var(--title-color);
-  text-shadow: 4px 4px 0px var(--accent-color);
+  text-shadow: 4px 4px 0px var(--title-shadow);
 }
 
 .header__title-container {
   display: flex;
   flex-direction: column;
   align-self: center;
-  padding: 0 20px 60px 20px;
   padding-block-end: 60px;
-  padding-inline-end: 20px;
 }
 
 .header__paragraph {
@@ -184,14 +188,14 @@
 }
 
 .section__title {
-  color: var(--accent-color);
+  color: var(--section-title-color);
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 20px;
 }
 
 .section__article-title {
-  color: var(--background-color);
+  color: var(--article-title-color);
   font-size: 18px;
 }
 
@@ -215,7 +219,7 @@
 }
 
 .section__article-list-title {
-  color: var(--background-color);
+  color: var(--article-title-color);
   font-size: 18px;
   font-weight: 700;
 }
@@ -226,7 +230,11 @@
 }
 
 .title-decor {
-  background: var(--accent-color);
+  background: var(--title-decor);
+}
+
+.section__third-block .section__article-title {
+  font-weight: 400;
 }
 
 .section__third-block .section__article-list-title {
@@ -291,8 +299,11 @@
 /*Footer*/
 
 .footer {
-  padding: 282px 20px;
-  text-align: center;
+  display: flex;
+  height: 100vh;
+  min-height: 668px;
+  align-items: center;
+  justify-content: center;
   position: relative;
 }
 
@@ -312,6 +323,10 @@
 @media (375px <= width < 768px) {
   .header {
     padding: 0 10px;
+  }
+
+  .header__title {
+    margin-inline-start: 0;
   }
 
   .decorated-zone::before {
@@ -412,14 +427,43 @@
     gap: 10px;
   }
 
-  .footer {
-    padding: 260px 10px;
-  }
-
   .footer__title {
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
     font-weight: 700;
     color: var(--title-color);
     text-shadow: 2px 2px 0px var(--accent-color);
+  }
+}
+
+@media (768px <= width < 1024px) {
+  .header__theme-menu {
+    justify-content: flex-end;
+    padding-block-start: 50px;
+  }
+
+  .header__title-container {
+    padding-block-end: 50px;
+  }
+
+  .section__first-block .section__title,
+  .section__third-block .section__title {
+    width: 32%;
+    flex: 0 0 auto;
+  }
+
+  .section__first-block .section__article-list,
+  .section__third-block .section__article-list {
+    width: 65%;
+    flex: 0 0 auto;
+  }
+
+  .section__second-block .section__title {
+    width: 30%;
+  }
+  .section__second-block .section__article-list {
+    flex-direction: column;
+  }
+  .section__second-block .section__article-item {
+    width: 100%;
   }
 }
