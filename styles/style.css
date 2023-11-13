@@ -74,13 +74,6 @@
   gap: 10px;
 }
 
-@media (1024px > width) {
-  .header__theme-menu-list {
-    flex-direction: column;
-    align-items: flex-end;
-  }
-}
-
 .header__theme-menu-button {
   text-transform: lowercase;
   padding: 2.5px 13px;
@@ -307,12 +300,6 @@
   position: relative;
 }
 
-@media (768px < width < 1024px) {
-  .footer {
-    padding: 430px 20px;
-  }
-}
-
 .footer__title {
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   font-weight: 700;
@@ -320,7 +307,45 @@
   text-shadow: 2px 2px 0px var(--accent-color);
 }
 
-@media (375px <= width < 768px) {
+@media (width <= 768px) {
+  .header__theme-menu {
+    justify-content: flex-end;
+    padding-block-start: 50px;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .header__title-container {
+    padding-block-end: 50px;
+  }
+
+  .section__first-block .section__title,
+  .section__third-block .section__title {
+    width: 32%;
+    flex: 0 0 auto;
+  }
+
+  .section__first-block .section__article-list,
+  .section__third-block .section__article-list {
+    width: 65%;
+    flex: 0 0 auto;
+  }
+
+  .section__second-block .section__title {
+    width: 30%;
+  }
+  .section__second-block .section__article-list {
+    flex-direction: column;
+  }
+  .section__second-block .section__article-item {
+    width: 100%;
+  }
+}
+
+@media (width <= 375px) {
   .header {
     padding: 0 10px;
   }
@@ -432,38 +457,5 @@
     font-weight: 700;
     color: var(--title-color);
     text-shadow: 2px 2px 0px var(--accent-color);
-  }
-}
-
-@media (768px <= width < 1024px) {
-  .header__theme-menu {
-    justify-content: flex-end;
-    padding-block-start: 50px;
-  }
-
-  .header__title-container {
-    padding-block-end: 50px;
-  }
-
-  .section__first-block .section__title,
-  .section__third-block .section__title {
-    width: 32%;
-    flex: 0 0 auto;
-  }
-
-  .section__first-block .section__article-list,
-  .section__third-block .section__article-list {
-    width: 65%;
-    flex: 0 0 auto;
-  }
-
-  .section__second-block .section__title {
-    width: 30%;
-  }
-  .section__second-block .section__article-list {
-    flex-direction: column;
-  }
-  .section__second-block .section__article-item {
-    width: 100%;
   }
 }
