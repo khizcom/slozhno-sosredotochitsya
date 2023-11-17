@@ -138,21 +138,21 @@
   gap: 60px;
 }
 
-.section__first-block,
-.section__third-block {
+.content__section_layout-basic,
+.content__section_layout-basic {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
 }
 
-.section__first-block .section__title,
-.section__third-block .section__title {
+.content__section_layout-basic .section__title,
+.content__section_layout-basic .section__title {
   width: 33%;
   flex: 0 0 auto;
 }
 
-.section__first-block .section__article-list,
-.section__third-block .section__article-list {
+.content__section_layout-basic .section__article-list,
+.content__section_layout-basic .section__article-list {
   width: 66%;
   flex: 0 0 auto;
 }
@@ -167,16 +167,16 @@
   gap: 30px;
 }
 
-.section__second-block .section__title {
+.content__section_layout-alternative .section__title {
   width: 30%;
 }
 
-.section__second-block .section__article-list {
+.content__section_layout-alternative .section__article-list {
   display: flex;
   justify-content: space-between;
 }
 
-.section__second-block .section__article-item {
+.content__section_layout-alternative .section__article-item {
   width: 32%;
 }
 
@@ -226,11 +226,11 @@
   background: var(--title-decor);
 }
 
-.section__third-block .section__article-title {
+.content__section_layout-basic .section__article-title {
   font-weight: 400;
 }
 
-.section__third-block .section__article-list-title {
+.content__section_layout-basic .section__article-list-title {
   margin-bottom: 20px;
 }
 
@@ -307,7 +307,7 @@
   text-shadow: 2px 2px 0px var(--accent-color);
 }
 
-@media (width <= 768px) {
+@media (width <= 1023px) {
   .header__theme-menu {
     justify-content: flex-end;
     padding-block-start: 50px;
@@ -322,30 +322,30 @@
     padding-block-end: 50px;
   }
 
-  .section__first-block .section__title,
-  .section__third-block .section__title {
+  .content__section_layout-basic .section__title,
+  .content__section_layout-basic .section__title {
     width: 32%;
     flex: 0 0 auto;
   }
 
-  .section__first-block .section__article-list,
-  .section__third-block .section__article-list {
+  .content__section_layout-basic .section__article-list,
+  .content__section_layout-basic .section__article-list {
     width: 65%;
     flex: 0 0 auto;
   }
 
-  .section__second-block .section__title {
+  .content__section_layout-alternative .section__title {
     width: 30%;
   }
-  .section__second-block .section__article-list {
+  .content__section_layout-alternative .section__article-list {
     flex-direction: column;
   }
-  .section__second-block .section__article-item {
+  .content__section_layout-alternative .section__article-item {
     width: 100%;
   }
 }
 
-@media (width <= 375px) {
+@media (width <= 767px) {
   .header {
     padding: 0 10px;
   }
@@ -401,40 +401,40 @@
   }
 
   .section__first_block,
-  .section__second-block,
-  .section__third-block {
+  .content__section_layout-alternative,
+  .content__section_layout-basic {
     flex-direction: column;
   }
 
-  .section__first-block,
-  .section__third-block {
+  .content__section_layout-basic,
+  .content__section_layout-basic {
     flex-direction: column;
   }
 
-  .section__first-block .section__title,
-  .section__second-block .section__title,
-  .section__third-block .section__title {
+  .content__section_layout-basic .section__title,
+  .content__section_layout-alternative .section__title,
+  .content__section_layout-basic .section__title {
     width: 80%;
   }
 
-  .section__third-block .section__title {
+  .content__section_layout-basic .section__title {
     width: 100%;
   }
 
-  .section__first-block .section__article-list,
-  .section__third-block .section__article-list {
+  .content__section_layout-basic .section__article-list,
+  .content__section_layout-basic .section__article-list {
     width: 100%;
   }
 
-  .section__second-block {
+  .content__section_layout-alternative {
     display: flex;
   }
 
-  .section__second-block .section__article-list {
+  .content__section_layout-alternative .section__article-list {
     flex-direction: column;
   }
 
-  .section__second-block .section__article-item {
+  .content__section_layout-alternative .section__article-item {
     width: 100%;
   }
 
